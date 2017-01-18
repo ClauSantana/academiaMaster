@@ -16,25 +16,18 @@ public class Funcionario extends Pessoa {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATA")
-	private Date data;
+	private Date datacontrato;
 		
 	@Column(name = "ESCOLARIDADE")
 	private char escolaridade;
 
 	
-	/**
-	 * 
-	 * @return the data
-	 */
-	public Date getData() {
-		return data;
+	
+	public Date getDatacontrato() {
+		return datacontrato;
 	}
-	/**
-	 * 
-	 * @param data the data to set
-	 */
-	public void setData(Date data) {
-		this.data = data;
+	public void setDatacontrato(Date datacontrato) {
+		this.datacontrato = datacontrato;
 	}
 	/**
 	 * 

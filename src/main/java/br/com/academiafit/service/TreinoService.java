@@ -5,10 +5,9 @@ import java.util.List;
 import br.com.academiafit.vo.TreinoVO;
 
 public interface TreinoService {
-	public void salvar(TreinoVO avaliacaofisica);
-	public String incluir(TreinoVO avaliacaofisica);
-	public String excluir (int index);
-	public List<TreinoVO> consultarTodos();
-	String excluir(TreinoVO avaliacaofisica);
+	
+	public void incluir(TreinoVO treino);
+	public void excluir (TreinoVO treino);
+	public void alterar(TreinoVO treino);
 	public List<TreinoVO> listarTodos();
 }

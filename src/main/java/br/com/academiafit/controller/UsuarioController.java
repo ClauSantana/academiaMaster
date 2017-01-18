@@ -3,18 +3,18 @@ package br.com.academiafit.controller;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
 
 import br.com.academiafit.service.UsuarioService;
 import br.com.academiafit.vo.UsuarioVO;
 
-@Controller("usuarioMbean")
-@Scope("session")
+
+
+@ManagedBean(name = "usuarioMbean" )
+@SessionScoped
 public class UsuarioController {
 
 	private UsuarioService usuarioService;
@@ -28,8 +28,7 @@ public class UsuarioController {
 	
 	@PostConstruct
 	public void init(){
-		//listaUsuarioVO = usuarioService.listarTodos();
-		System.out.println(listaUsuarioVO);
+		//System.out.println(listaUsuarioVO);
 	}
 
 	public UsuarioVO getUsuario() {
@@ -45,17 +44,12 @@ public class UsuarioController {
 		return listaUsuarioVO;
 	}
 	
-	/*private void limparCampos(){
-		this.usuario.setNickname(null);
-		this.usuario.setSenha(null);
-	}*/
-	
 	public String cancelar(){
 		return "";
 	}
 	
-	public String salvar(){
-		usuarioService.salvar(usuario);		
+	public String incluir(){
+		usuarioService.incluir(usuario);		
 		return "";
 	}
 	
@@ -73,4 +67,10 @@ public class UsuarioController {
 		usuarioService.alterarSenha(usuario);
 		return "";
 	}
+	
+	/*private void limparCampos(){
+	this.usuario.setNickname(null);
+	this.usuario.setSenha(null);
+	}*/
+
 }

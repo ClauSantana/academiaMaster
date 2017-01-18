@@ -11,9 +11,13 @@ public class AvaliacaoFisicaVO {
 	private double peito;
 	private double cintura;
 	private double quadril;
-	private double[] braço = new double [2];
-	private double [] coxa = new double [2];
-	private double [] panturrilha = new double[2];
+	private double bracoDireito;
+	private double bracoEsquerdo;
+	private double coxaDireito;
+	private double coxaEsquerdo;
+	private double panturrilhaDireito;
+	private double panturrilhaEsquerdo;
+	
 	
 	public Date getDataavaliacao() {
 		return dataavaliacao;
@@ -36,8 +40,8 @@ public class AvaliacaoFisicaVO {
 	public double getImc() {
 		return imc;
 	}
-	public void setImc(double imc) {
-		this.imc = imc;
+	public void setImc() {
+		this.imc = this.peso/(this.altura*this.altura);
 	}
 	public double getPeito() {
 		return peito;
@@ -57,23 +61,42 @@ public class AvaliacaoFisicaVO {
 	public void setQuadril(double quadril) {
 		this.quadril = quadril;
 	}
-	public double[] getBraço() {
-		return braço;
+	public double getBracoDireito() {
+		return bracoDireito;
 	}
-	public void setBraço(double[] braço) {
-		this.braço = braço;
+	public void setBracoDireito(double bracoDireito) {
+		this.bracoDireito = bracoDireito;
 	}
-	public double[] getCoxa() {
-		return coxa;
+	public double getBracoEsquerdo() {
+		return bracoEsquerdo;
 	}
-	public void setCoxa(double[] coxa) {
-		this.coxa = coxa;
+	public void setBracoEsquerdo(double bracoEsquerdo) {
+		this.bracoEsquerdo = bracoEsquerdo;
 	}
-	public double[] getPanturrilha() {
-		return panturrilha;
+	public double getCoxaDireito() {
+		return coxaDireito;
 	}
-	public void setPanturrilha(double[] panturrilha) {
-		this.panturrilha = panturrilha;
+	public void setCoxaDireito(double coxaDireito) {
+		this.coxaDireito = coxaDireito;
 	}
+	public double getCoxaEsquerdo() {
+		return coxaEsquerdo;
+	}
+	public void setCoxaEsquerdo(double coxaEsquerdo) {
+		this.coxaEsquerdo = coxaEsquerdo;
+	}
+	public double getPanturrilhaDireito() {
+		return panturrilhaDireito;
+	}
+	public void setPanturrilhaDireito(double panturrilhaDireito) {
+		this.panturrilhaDireito = panturrilhaDireito;
+	}
+	public double getPanturrilhaEsquerdo() {
+		return panturrilhaEsquerdo;
+	}
+	public void setPanturrilhaEsquerdo(double panturrilhaEsquerdo) {
+		this.panturrilhaEsquerdo = panturrilhaEsquerdo;
+	}
+	
 	
 }

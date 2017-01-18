@@ -10,223 +10,181 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import br.com.academiafit.exception.BusinessException;
+import br.com.academiafit.util.Util;
 
 
 @Entity
-@Table(name="AVALIACAO_FISICA")
+@Table(name="avaliacaofisica")
 public class AvaliacaoFisica{	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
+	@Column(name="id")
 	private long id;
 	
+	/*
 	@OneToOne
-	@JoinColumn(name="ID_CLIENTE")
+	@JoinColumn(name="idcliente")
 	private Cliente cliente;
-
-	@Column(name="DATAAVALIACAO")
+	*/
+	
+	@Column(name="dataavaliacao")
+	@Temporal(TemporalType.DATE)
 	private Date dataavaliacao;
 	
-	@Column(name="ALTURA")
+	@Column(name="altura")
 	private double altura;
 	
-	@Column(name="PESO")
+	@Column(name="peso")
 	private double peso;
 	
-	@Column(name="IMC")
+	@Column(name="imc")
 	private double imc;
 	
-	@Column(name="PEITO")
+	@Column(name="peito")
 	private double peito;
 	
-	@Column(name="CINTURA")
+	@Column(name="cintura")
 	private double cintura;
 	
-	@Column(name="QUADRIL")
+	@Column(name="quadril")
 	private double quadril;
 	
-	@Column(name="BRACO")
-	private double braco;
+	@Column(name="bracodireito")
+	private double bracoDireito;
 	
-	@Column(name="COXA")
-	private double coxa;
+	@Column(name="bracoesquerdo")
+	private double bracoEsquerdo;
+	
+	@Column(name="coxadireito")
+	private double coxaDireito;
+	
+	@Column(name="coxaesquerdo")
+	private double coxaEsquerdo;
+	
+	@Column(name="panturrilhadireito")
+	private double panturrilhaDireito;
+	
+	@Column(name="panturrilhaesquerdo")
+	private double panturrilhaEsquerdo;
 
-	@Column(name="PANTURRILHA")
-	private double panturrilha;
-
-	/**
-	 * 
-	 * @return the id
-	 */
 	public long getId() {
 		return id;
 	}
-	/**
-	 * 
-	 * @param id the id to set
-	 */
+
 	public void setId(long id) {
 		this.id = id;
 	}
-	/**
-	 * 
-	 * @return the cliente
-	 */
-	public Cliente getCliente() {
-		return cliente;
-	}
-	/**
-	 * 
-	 * @param cliente the cliente to set
-	 */
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	/**
-	 * 
-	 * @return the dataavaliacao
-	 */
+
 	public Date getDataavaliacao() {
 		return dataavaliacao;
 	}
-	/**
-	 * 
-	 * @param dataavaliacao the dataavaliacao to set
-	 */
+
 	public void setDataavaliacao(Date dataavaliacao) {
 		this.dataavaliacao = dataavaliacao;
 	}
-	/**
-	 * 
-	 * @return the altura
-	 */
+
 	public double getAltura() {
 		return altura;
 	}
-	/**
-	 * 
-	 * @param altura the altura to set
-	 */
+
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-	/**
-	 * 
-	 * @return the peso
-	 */
+
 	public double getPeso() {
 		return peso;
 	}
-	/**
-	 * 
-	 * @param peso the pese to set
-	 */
+
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	/**
-	 * 
-	 * @return the imc
-	 */
+
 	public double getImc() {
 		return imc;
 	}
-	/**
-	 * 
-	 * @param imc the imc to set
-	 */
-	public void setImc(double imc) {
-		this.imc = imc;
+
+	public void setImc() {
+		try{
+			Util.calcularIMC(this.altura, this.peso);
+		}catch(BusinessException exception){
+			this.imc = 0;
+		}
 	}
-	/**
-	 * 
-	 * @return the peito
-	 */
+
 	public double getPeito() {
 		return peito;
 	}
-	/**
-	 * 
-	 * @param peito the peito to set
-	 */
+
 	public void setPeito(double peito) {
 		this.peito = peito;
 	}
-	/** 
-	 * 
-	 * @return the cintura
-	 */
+
 	public double getCintura() {
 		return cintura;
 	}
-	/**
-	 * 
-	 * @param cintura the cintura to set
-	 */
+
 	public void setCintura(double cintura) {
 		this.cintura = cintura;
 	}
 
-	/**
-	 * 
-	 * @return the quadril
-	 */
 	public double getQuadril() {
 		return quadril;
 	}
 
-	/**
-	 * 
-	 * @param quadril the quadril to set
-	 */
 	public void setQuadril(double quadril) {
 		this.quadril = quadril;
 	}
-	
-	/**
-	 * 
-	 * @return the braco
-	 */
-	public double getBraco() {
-		return braco;
+
+	public double getBracoDireito() {
+		return bracoDireito;
 	}
-	/**
-	 * 
-	 * @param braco the braco to set
-	 */
-	public void setBraco(double braco) {
-		this.braco = braco;
+
+	public void setBracoDireito(double bracoDireito) {
+		this.bracoDireito = bracoDireito;
 	}
-	/**
-	 * 
-	 * @return the coxa
-	 */
-	public double getCoxa() {
-		return coxa;
+
+	public double getBracoEsquerdo() {
+		return bracoEsquerdo;
 	}
-	/**
-	 * 
-	 * @param coxa the coxa to set
-	 */
-	public void setCoxa(double coxa) {
-		this.coxa = coxa;
+
+	public void setBracoEsquerdo(double bracoEsquerdo) {
+		this.bracoEsquerdo = bracoEsquerdo;
 	}
-	/**
-	 * 
-	 * @return the panturrilha
-	 */
-	public double getPanturrilha() {
-		return panturrilha;
+
+	public double getCoxaDireito() {
+		return coxaDireito;
 	}
-	/**
-	 * 
-	 * @param panturrilha the panturrilha to set
-	 */
-	public void setPanturrilha(double panturrilha) {
-		this.panturrilha = panturrilha;
+
+	public void setCoxaDireito(double coxaDireito) {
+		this.coxaDireito = coxaDireito;
 	}
-	
-	
-	
+
+	public double getCoxaEsquerdo() {
+		return coxaEsquerdo;
+	}
+
+	public void setCoxaEsquerdo(double coxaEsquerdo) {
+		this.coxaEsquerdo = coxaEsquerdo;
+	}
+
+	public double getPanturrilhaDireito() {
+		return panturrilhaDireito;
+	}
+
+	public void setPanturrilhaDireito(double panturrilhaDireito) {
+		this.panturrilhaDireito = panturrilhaDireito;
+	}
+
+	public double getPanturrilhaEsquerdo() {
+		return panturrilhaEsquerdo;
+	}
+
+	public void setPanturrilhaEsquerdo(double panturrilhaEsquerdo) {
+		this.panturrilhaEsquerdo = panturrilhaEsquerdo;
+	}
 }

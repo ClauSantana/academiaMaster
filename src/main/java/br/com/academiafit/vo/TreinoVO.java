@@ -5,7 +5,6 @@ public class TreinoVO {
 	private int series;
 	private int repeticoes;
 	
-	
 	public char getDiasemana() {
 		return diasemana;
 	}
