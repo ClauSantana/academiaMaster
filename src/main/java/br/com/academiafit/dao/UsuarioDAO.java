@@ -1,13 +1,25 @@
 package br.com.academiafit.dao;
 
 import java.util.List;
+
+import javax.persistence.Query;
+
 import br.com.academiafit.entidade.Usuario;
 import br.com.academiafit.exception.BusinessException;
 
 public interface UsuarioDAO {
-	public String incluir(Usuario usuario);
-	public String excluir(String nickname);
-	public String alterarSenha (Usuario usuario);
-	public Usuario consultar(String nickname) throws BusinessException;
+	// Salvar: salva o novo usuário no banco de dados
+	public void incluir(Usuario usuario);
+
+	// excluir: exclui um usuário do banco
+	public void excluir(Usuario usuario);
+
+	// alterarSenha: altera a senha de um determinado usuário
+	public void alterar(Usuario usuario);
+	
+	// busca o usuário no banco
+	public boolean consultar(String nickname);
+	
+	// listarTodos: obtém todos os Usuarios a partir do banco
 	public List<Usuario> consultarTodos();
 }

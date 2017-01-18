@@ -11,7 +11,7 @@ public interface FuncionarioDAO {
 		
 		public String incluir(Funcionario funcionario);
 		public String alterar(Funcionario funcionario);
-		public String excluir (int index);
+		public String excluir (Funcionario funcionario);
 		public List<Funcionario> listarTodos();
 		
 

@@ -9,12 +9,12 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.academiafit.dao.MaquinarioDAO;
-import br.com.academiafit.dao.impl.AbstractDAO;
+import br.com.academiafit.dao.impl.AbstractDAOImpl;
 import br.com.academiafit.service.MaquinarioService;
 import br.com.academiafit.vo.MaquinarioVO;
 import br.com.academiafit.vo.converter.ConverterMaquinario;
 
-public class MaquinarioServiceImpl extends AbstractDAO implements MaquinarioService{
+public class MaquinarioServiceImpl extends AbstractDAOImpl implements MaquinarioService{
 	@Autowired(required=true)
 	private MaquinarioDAO dao;
 	

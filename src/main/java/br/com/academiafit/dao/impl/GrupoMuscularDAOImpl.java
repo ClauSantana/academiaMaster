@@ -40,9 +40,9 @@ public class GrupoMuscularDAOImpl extends AbstractDAOImpl implements GrupoMuscul
 
 	@Override 
 	//verificar se a informação solicitada pelo usuário existe no banco de dados
-	public String excluir(int index) {
-		GrupoMuscular gmuscular = super.getEntityManager().find(GrupoMuscular.class, index);
-	//se existir remove a informação desejada	
+	public String excluir(GrupoMuscular grupoMuscular) {
+		GrupoMuscular gmuscular = super.getEntityManager().find(GrupoMuscular.class, grupoMuscular.getId());
+		//se existir remove a informação desejada	
 		super.getEntityManager().remove(gmuscular);
 		return "";
 	}
@@ -61,7 +61,4 @@ public class GrupoMuscularDAOImpl extends AbstractDAOImpl implements GrupoMuscul
 		return listagMuscular;
 	
 	} 
-	
-	
-
 }

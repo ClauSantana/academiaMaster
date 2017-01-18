@@ -10,13 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.academiafit.dao.GrupoMuscularDAO;
-import br.com.academiafit.dao.impl.AbstractDAO;
+import br.com.academiafit.dao.impl.AbstractDAOImpl;
 import br.com.academiafit.service.GrupoMuscularService;
 import br.com.academiafit.vo.GrupoMuscularVO;
 import br.com.academiafit.vo.converter.ConverterGrupoMuscular;
 
 @Service
-public class GrupoMuscularImpl extends AbstractDAO implements GrupoMuscularService{
+public class GrupoMuscularImpl extends AbstractDAOImpl implements GrupoMuscularService{
 	@Autowired(required=true)
 	private GrupoMuscularDAO dao;    
 	

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +16,7 @@ public class Treino {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private long id;
+	private int id;
 	
 	@Column(name="diasemana")
 	private String diasemana;
@@ -24,12 +26,16 @@ public class Treino {
 	
 	@Column(name="repeticoes")
 	private int repeticoes;
+	
+	@OneToOne
+	@JoinColumn(name="id_maquinario")
+	private Maquinario maquinario;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -56,5 +62,13 @@ public class Treino {
 	public void setRepeticoes(int repeticoes) {
 		this.repeticoes = repeticoes;
 	}
+
+	public Maquinario getMaquinario() {
+		return maquinario;
+	}
+
+	public void setMaquinario(Maquinario maquinario) {
+		this.maquinario = maquinario;
+	}	
 	
 }

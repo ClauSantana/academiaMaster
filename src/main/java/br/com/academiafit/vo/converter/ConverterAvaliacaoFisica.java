@@ -7,14 +7,14 @@ import br.com.academiafit.entidade.AvaliacaoFisica;
 import br.com.academiafit.vo.AvaliacaoFisicaVO;
 
 public class ConverterAvaliacaoFisica {
-	public static AvaliacaoFisica ConverterAvaliacaoFisicaVoParaAvaliacaoFisica(AvaliacaoFisicaVO avaliacaofisicaVO){
+	public static AvaliacaoFisica ConverterVoParaAvaliacaoFisica(AvaliacaoFisicaVO avaliacaofisicaVO){
 		AvaliacaoFisica avaliacaofisica = new AvaliacaoFisica();
 		
+		avaliacaofisica.setId(avaliacaofisicaVO.getId());
 		avaliacaofisica.setAltura(avaliacaofisicaVO.getAltura());
 		avaliacaofisica.setBracoDireito(avaliacaofisicaVO.getBracoDireito());
 		avaliacaofisica.setBracoEsquerdo(avaliacaofisicaVO.getBracoEsquerdo());
 		avaliacaofisica.setCintura(avaliacaofisicaVO.getCintura());
-		//avaliacaofisica.setCliente(avaliacaofisicaVO.getCliente());
 		avaliacaofisica.setCoxaDireito(avaliacaofisicaVO.getCoxaDireito());
 		avaliacaofisica.setCoxaEsquerdo(avaliacaofisicaVO.getCoxaEsquerdo());
 		avaliacaofisica.setDataavaliacao(avaliacaofisicaVO.getDataavaliacao());
@@ -31,11 +31,11 @@ public class ConverterAvaliacaoFisica {
 	public static AvaliacaoFisicaVO ConverterAvaliacaoFisicaAvaliacaoFisicaParaVO(AvaliacaoFisica avaliacaoFisica){
 		AvaliacaoFisicaVO avaliacaofisicaVO = new AvaliacaoFisicaVO();
 		
+		avaliacaofisicaVO.setId(avaliacaoFisica.getId());
 		avaliacaofisicaVO.setAltura(avaliacaoFisica.getAltura());
 		avaliacaofisicaVO.setBracoDireito(avaliacaoFisica.getBracoDireito());
 		avaliacaofisicaVO.setBracoEsquerdo(avaliacaoFisica.getBracoEsquerdo());
 		avaliacaofisicaVO.setCintura(avaliacaoFisica.getCintura());
-		//avaliacaofisicaVO.setCliente(avaliacaoFisica.getCliente());
 		avaliacaofisicaVO.setCoxaDireito(avaliacaoFisica.getCoxaDireito());
 		avaliacaofisicaVO.setCoxaEsquerdo(avaliacaoFisica.getCoxaEsquerdo());
 		avaliacaofisicaVO.setDataavaliacao(avaliacaoFisica.getDataavaliacao());
@@ -49,7 +49,7 @@ public class ConverterAvaliacaoFisica {
 		return avaliacaofisicaVO;
 	}
 	
-	public static List<AvaliacaoFisicaVO> ConverterAvaliacaoFisicaListaAvaliacaoFisicaParaListaVo(List<AvaliacaoFisica> listaEntidade){
+	public static List<AvaliacaoFisicaVO> ConverterListaAvaliacaoFisicaParaListaVo(List<AvaliacaoFisica> listaEntidade){
 		
 		List<AvaliacaoFisicaVO> listAvaliacaoFisicaVO = new ArrayList<AvaliacaoFisicaVO>();
 		if(listaEntidade != null && !listaEntidade.isEmpty()){

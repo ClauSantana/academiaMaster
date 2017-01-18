@@ -10,49 +10,85 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.academiafit.dao.TreinoDAO;
+import br.com.academiafit.dao.TreinoDAO;
+import br.com.academiafit.entidade.Treino;
 import br.com.academiafit.exception.BusinessException;
 import br.com.academiafit.service.TreinoService;
 import br.com.academiafit.vo.TreinoVO;
+import br.com.academiafit.vo.TreinoVO;
+import br.com.academiafit.vo.converter.ConverterTreino;
 import br.com.academiafit.vo.converter.ConverterTreino;
 
 @Service
 public class TreinoServiceImpl implements TreinoService{
-	
 	@Autowired(required=true)
 	private TreinoDAO dao;
-	
-	@Override
-	@Transactional
-	public void incluir(TreinoVO treino) {
-		String msg = new String (dao.incluir(ConverterTreino.ConverterTreinoVoParaTreino(treino)));
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));	
-	}
 
-	@Override
-	public List<TreinoVO> listarTodos() {
-		return ConverterTreino.ConverterTreinoListaTreinoParaListaVo(dao.consultarTodos());
-	}
-	
-	@Override
 	@Transactional
-	public void excluir(TreinoVO treino) {
-		String msg = new String (dao.excluir(ConverterTreino.ConverterTreinoVoParaTreino(treino).getId()));
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));
-	}
-	
-	@Override
-	@Transactional
-	public void alterar(TreinoVO treino) {
-		String msg = new String (dao.alterar(ConverterTreino.ConverterTreinoVoParaTreino(treino)));
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));
-	}
-
-	@Override
-	public void consultar(TreinoVO treino) {
-		try{
-			dao.consultar(ConverterTreino.ConverterTreinoVoParaTreino(treino).getId());
-		}catch(BusinessException exception){
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(exception.getMessage()));
+	public void incluir(TreinoVO treinoVO) throws BusinessException {
+		boolean status = dao.consultar(treinoVO.getId());
+		if (status){
+			throw new BusinessException("Nickname já está sendo usado por outro treino!");
+		}else{
+			Treino treino = ConverterTreino.ConverterVoParaTreino(treinoVO);
+			dao.incluir(treino);
 		}
+	}
+
+	@Transactional
+	public void excluir(TreinoVO treinoVO) throws BusinessException{
+		boolean status = dao.consultar(treinoVO.getId());
+		System.out.println(treinoVO.getId() + " - " + status);
+
+		if (status){
+			Treino treino = ConverterTreino.ConverterVoParaTreino(treinoVO);
+			System.out.println(treino.getId());
+			dao.excluir(treino);
+
+		}else{
+			System.out.println("nada!");
+			throw new BusinessException("Treino não foi encontrado!");
+
+		}
+
+	}
+
+	@Transactional
+	public void alterar(TreinoVO treinoVO) throws BusinessException{
+		boolean status = dao.consultar(treinoVO.getId());
+
+		if (status){
+			Treino treino = ConverterTreino.ConverterVoParaTreino(treinoVO);
+			dao.alterar(treino);
+
+		}else{
+			throw new BusinessException("Treino não foi encontrado!");
+
+		}
+
+	}
+
+	@Transactional
+	public TreinoVO consultar(TreinoVO treinoVO) throws BusinessException{
+		boolean status = dao.consultar(treinoVO.getId());
+
+		if (status){
+			Treino treino = ConverterTreino.ConverterVoParaTreino(treinoVO);
+			List<TreinoVO> lista = ConverterTreino.ConverterListaTreinoParaListaVo(dao.consultarTodos());
+			for (TreinoVO treinoAtual : lista){
+				if (treinoAtual.getId() == treinoVO.getId()){
+					return treinoVO; 
+				}
+			}
+		}else{
+			throw new BusinessException("Treino não foi encontrado!");
+		}
+		return null;
+	}
+
+	@Transactional
+	public List<TreinoVO> consultarTodos() {
+		List<Treino> listaTreino = dao.consultarTodos();
+		return ConverterTreino.ConverterListaTreinoParaListaVo(listaTreino);
 	}
 }

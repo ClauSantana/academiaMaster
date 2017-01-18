@@ -53,4 +53,10 @@ public class ProfessorDAOImpl extends AbstractDAOImpl implements ProfessorDAO{
 		return listaProfessor;
 	}
 
+	@Override
+	public String excluir(Professor professor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

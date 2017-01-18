@@ -5,9 +5,18 @@ import br.com.academiafit.entidade.Treino;
 import br.com.academiafit.exception.BusinessException;
 
 public interface TreinoDAO {		
-	public String incluir(Treino treino);
-	public String excluir (long index);
-	public String alterar(Treino treino);
-	public Treino consultar (long index) throws BusinessException;
+	// Salvar: salva o novo usuário no banco de dados
+	public void incluir(Treino treino);
+
+	// excluir: exclui um usuário do banco
+	public void excluir(Treino treino);
+
+	// alterarSenha: altera a senha de um determinado usuário
+	public void alterar(Treino treino);
+
+	// busca o usuário no banco
+	public boolean consultar(int id);
+
+	// listarTodos: obtém todos os Treinos a partir do banco
 	public List<Treino> consultarTodos();
 }

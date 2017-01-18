@@ -3,7 +3,7 @@ package br.com.academiafit.dao.impl;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public class AbstractDAO {
+public class AbstractDAOImpl {
 	@PersistenceContext(unitName="jpa-persistence")
 	private EntityManager entityManager;
 
@@ -13,5 +13,10 @@ public class AbstractDAO {
 
 	public void setEntityManager(EntityManager em) {
 		this.entityManager = em;
+	}
+
+	public String excluir(int index) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -3,7 +3,8 @@ package br.com.academiafit.vo;
 import java.util.Date;
 
 public class AvaliacaoFisicaVO {
-
+	
+	private long id;
 	private Date dataavaliacao;
 	private double altura;
 	private double peso;
@@ -18,7 +19,12 @@ public class AvaliacaoFisicaVO {
 	private double panturrilhaDireito;
 	private double panturrilhaEsquerdo;
 	
-	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public Date getDataavaliacao() {
 		return dataavaliacao;
 	}

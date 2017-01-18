@@ -57,6 +57,12 @@ public class FuncionarioDAOImpl extends AbstractDAOImpl implements FuncionarioDA
 		
 	}
 
+	@Override
+	public String excluir(Funcionario funcionario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

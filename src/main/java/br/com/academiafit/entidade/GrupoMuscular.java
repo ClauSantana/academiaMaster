@@ -16,16 +16,11 @@ public class GrupoMuscular {
 	@Column(name="ID")
 	private long id;
 	
-	//@OneToOne
-	//@JoinColumn(name="")
-	//private Cliente cliente;
-	
 	@Column(name="MUSCULO")
 	private String musculo;
 	
 	@Column(name="EXERCICIOS")
 	private String exercicios;
-	
 	
 	/**
 	 * 

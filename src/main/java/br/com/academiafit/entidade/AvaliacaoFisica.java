@@ -26,12 +26,6 @@ public class AvaliacaoFisica{
 	@Column(name="id")
 	private long id;
 	
-	/*
-	@OneToOne
-	@JoinColumn(name="idcliente")
-	private Cliente cliente;
-	*/
-	
 	@Column(name="dataavaliacao")
 	@Temporal(TemporalType.DATE)
 	private Date dataavaliacao;
@@ -71,7 +65,11 @@ public class AvaliacaoFisica{
 	
 	@Column(name="panturrilhaesquerdo")
 	private double panturrilhaEsquerdo;
-
+	
+	@OneToOne
+	@JoinColumn(name="id_professor")
+	private Professor professor;
+	
 	public long getId() {
 		return id;
 	}
@@ -187,4 +185,14 @@ public class AvaliacaoFisica{
 	public void setPanturrilhaEsquerdo(double panturrilhaEsquerdo) {
 		this.panturrilhaEsquerdo = panturrilhaEsquerdo;
 	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+	
+	
 }

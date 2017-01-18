@@ -11,7 +11,7 @@ public interface ProfessorDAO {
 		
 		public String incluir(Professor professor);
 		public String alterar(Professor professor);
-		public String excluir (int index);
+		public String excluir (Professor professor);
 		public List<Professor> listarTodos();
 		
 

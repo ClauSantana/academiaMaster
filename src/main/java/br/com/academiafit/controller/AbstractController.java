@@ -6,7 +6,6 @@ import javax.servlet.ServletContext;
 
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-
 public class AbstractController {
 	
 	public void getConfigSpring(){

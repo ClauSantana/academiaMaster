@@ -9,8 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PROFESSOR")
-public class Professor extends Funcionario{
-
+public class Professor extends Funcionario{	
 	@Column(name="HORARIO")
 	private String horario;
 
@@ -28,6 +27,4 @@ public class Professor extends Funcionario{
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
-
-	
 }
