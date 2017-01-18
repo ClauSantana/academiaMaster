@@ -6,9 +6,9 @@ import br.com.academiafit.vo.MaquinarioVO;
 public interface MaquinarioService {
 	
 	
-	public String incluir(MaquinarioVO maquinario);
-	public String excluir(MaquinarioVO maquinario);
-	public String alterar (MaquinarioVO maquinario);
+	public void incluir(MaquinarioVO maquinario);
+	public void excluir(MaquinarioVO maquinario);
+	public void alterar (MaquinarioVO maquinario);
 	public List<MaquinarioVO> listarTodos();
 
 

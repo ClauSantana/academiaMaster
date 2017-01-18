@@ -15,16 +15,12 @@ import br.com.academiafit.vo.UsuarioVO;
 
 @ManagedBean(name = "usuarioMbean" )
 @SessionScoped
-public class UsuarioController {
+public class UsuarioController extends AbstractController{
 
+	@Autowired
 	private UsuarioService usuarioService;
 	private List<UsuarioVO> listaUsuarioVO;
 	private UsuarioVO usuario = new UsuarioVO();
-	
-	@Autowired
-	public UsuarioController(UsuarioService usuarioService){
-		this.usuarioService = usuarioService;
-	}
 	
 	@PostConstruct
 	public void init(){

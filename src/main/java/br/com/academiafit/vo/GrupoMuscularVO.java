@@ -2,19 +2,19 @@ package br.com.academiafit.vo;
 
 public class GrupoMuscularVO {
 
-		private char musculo;
-		private char exercicio;
+		private String musculo;
+		private String exercicio;
 		
-		public char getMusculo() {
+		public String getMusculo() {
 			return musculo;
 		}
-		public void setMusculo(char musculo) {
+		public void setMusculo(String musculo) {
 			this.musculo = musculo;
 		}
-		public char getExercicio() {
+		public String getExercicio() {
 			return exercicio;
 		}
-		public void setExercicio(char exercicio) {
+		public void setExercicio(String exercicio) {
 			this.exercicio = exercicio;
 		}
 }

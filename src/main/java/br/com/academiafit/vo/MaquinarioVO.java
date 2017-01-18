@@ -2,13 +2,13 @@ package br.com.academiafit.vo;
 
 public class MaquinarioVO {
 	
-	private char nome;
+	private String nome;
 
-	public char getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(char nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	

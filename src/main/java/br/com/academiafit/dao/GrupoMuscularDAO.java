@@ -4,13 +4,14 @@ import java.util.List;
 
 
 import br.com.academiafit.entidade.GrupoMuscular;
+import br.com.academiafit.vo.GrupoMuscularVO;
 
 
 public interface GrupoMuscularDAO {
 
-		public String incluir(GrupoMuscular grupomuscular);
+		public String incluir(GrupoMuscular grupoMuscular);
 		public String alterar(GrupoMuscular grupomuscular);
-		public String excluir(int index);
+		public String excluir(GrupoMuscular grupoMuscular);
 		public List<GrupoMuscular> consultarTodos();
 		
 

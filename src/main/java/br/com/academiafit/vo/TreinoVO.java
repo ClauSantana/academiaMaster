@@ -1,14 +1,14 @@
 package br.com.academiafit.vo;
 
 public class TreinoVO {
-	private char diasemana;
+	private String diasemana;
 	private int series;
 	private int repeticoes;
 	
-	public char getDiasemana() {
+	public String getDiasemana() {
 		return diasemana;
 	}
-	public void setDiasemana(char diasemana) {
+	public void setDiasemana(String diasemana) {
 		this.diasemana = diasemana;
 	}
 	public int getSeries() {

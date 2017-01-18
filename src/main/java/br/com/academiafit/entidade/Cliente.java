@@ -23,7 +23,7 @@ public class Cliente extends Pessoa {
 		private Date datacadastro;
 		
 		@Column(name = "DESENVOLVIMENTO")
-		private char desenvolvimento;
+		private String desenvolvimento;
 
 
 		/**
@@ -73,14 +73,14 @@ public class Cliente extends Pessoa {
 		 * 
 		 * @return desenvolvimento
 		 */
-		public char getDesenvolvimento() {
+		public String getDesenvolvimento() {
 			return desenvolvimento;
 		}
 		/**
 		 * 
 		 * @param desenvolvimento the desenvolvimento to set
 		 */
-		public void setDesenvolvimento(char desenvolvimento) {
+		public void setDesenvolvimento(String desenvolvimento) {
 			this.desenvolvimento = desenvolvimento;
 		}
 		

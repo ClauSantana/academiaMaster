@@ -9,4 +9,5 @@ public interface AvaliacaoFisicaService {
 	public void excluir (AvaliacaoFisicaVO avaliacaofisica);
 	public void alterar(AvaliacaoFisicaVO avaliacaofisica);
 	public List<AvaliacaoFisicaVO> listarTodos();
+	void consultar(AvaliacaoFisicaVO avaliacaofisica);
 }

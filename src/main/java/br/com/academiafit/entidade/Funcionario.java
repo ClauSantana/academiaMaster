@@ -19,7 +19,7 @@ public class Funcionario extends Pessoa {
 	private Date datacontrato;
 		
 	@Column(name = "ESCOLARIDADE")
-	private char escolaridade;
+	private String escolaridade;
 
 	
 	
@@ -33,14 +33,14 @@ public class Funcionario extends Pessoa {
 	 * 
 	 * @return the escolaridade
 	 */
-	public char getEscolaridade() {
+	public String getEscolaridade() {
 		return escolaridade;
 	}
 	/**
 	 * 
 	 * @param escolaridade the escolaridade to set
 	 */
-	public void setEscolaridade(char escolaridade) {
+	public void setEscolaridade(String escolaridade) {
 		this.escolaridade = escolaridade;
 	}
 	

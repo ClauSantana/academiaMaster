@@ -10,7 +10,7 @@ public class ClienteVO implements Serializable{
 	private double peso;
 	private double altura;
 	private Date datacadastro;
-	private char desenvolvimento;
+	private String desenvolvimento;
 	
 	public double getPeso() {
 		return peso;
@@ -30,10 +30,10 @@ public class ClienteVO implements Serializable{
 	public void setDatacadastro(Date datacadastro) {
 		this.datacadastro = datacadastro;
 	}
-	public char getDesenvolvimento() {
+	public String getDesenvolvimento() {
 		return desenvolvimento;
 	}
-	public void setDesenvolvimento(char desenvolvimento) {
+	public void setDesenvolvimento(String desenvolvimento) {
 		this.desenvolvimento = desenvolvimento;
 	}
 	public static long getSerialversionuid() {

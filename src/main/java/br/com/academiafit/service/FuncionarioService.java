@@ -7,9 +7,9 @@ import br.com.academiafit.vo.FuncionarioVO;
 public interface FuncionarioService {
 	
 	
-	public String incluir(FuncionarioVO funcionario);
-	public String excluir(FuncionarioVO funcionario);
-	public String alterar (FuncionarioVO funcionario);
+	public void incluir(FuncionarioVO funcionario);
+	public void excluir(FuncionarioVO funcionario);
+	public void alterar (FuncionarioVO funcionario);
 	public List<FuncionarioVO> listarTodos();
 
 

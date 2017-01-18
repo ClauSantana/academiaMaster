@@ -17,7 +17,7 @@ public class Maquinario {
 	private long id;
 	
 	@Column(name="NOME")
-	private char nome;
+	private String nome;
 
 	/**
 	 * 
@@ -37,14 +37,14 @@ public class Maquinario {
 	 * 
 	 * @return the nome
 	 */
-	public char getNome() {
+	public String getNome() {
 		return nome;
 	}
 	/**
 	 * 
 	 * @param nome the nome to sets
 	 */
-	public void setNome(char nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	

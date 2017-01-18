@@ -5,7 +5,7 @@ import java.util.Date;
 public class FuncionarioVO {
 
 		private Date datacontrato;
-		private char escolaridade;
+		private String escolaridade;
 		
 		
 		public Date getDatacontrato() {
@@ -14,10 +14,10 @@ public class FuncionarioVO {
 		public void setDatacontrato(Date datacontrato) {
 			this.datacontrato = datacontrato;
 		}
-		public char getEscolaridade() {
+		public String getEscolaridade() {
 			return escolaridade;
 		}
-		public void setEscolaridade(char escolaridade) {
+		public void setEscolaridade(String escolaridade) {
 			this.escolaridade = escolaridade;
 		}
 }

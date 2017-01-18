@@ -12,20 +12,20 @@ import javax.persistence.Table;
 public class Professor extends Funcionario{
 
 	@Column(name="HORARIO")
-	private char horario;
+	private String horario;
 
 	/**
 	 * 
 	 * @return the horario
 	 */
-	public char getHorario() {
+	public String getHorario() {
 		return horario;
 	}
 	/**
 	 * 
 	 * @param horario the horario to set
 	 */
-	public void setHorario(char horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 

@@ -7,9 +7,9 @@ import br.com.academiafit.vo.MaquinarioVO;
 public interface ClienteService {
 	
 	
-	public String incluir(ClienteVO cliente);
-	public String excluir(ClienteVO cliente);
-	public String alterar (ClienteVO cliente);
+	public void incluir(ClienteVO cliente);
+	public void excluir(ClienteVO cliente);
+	public void alterar (ClienteVO cliente);
 	public List<ClienteVO> listarTodos();
 	
 	

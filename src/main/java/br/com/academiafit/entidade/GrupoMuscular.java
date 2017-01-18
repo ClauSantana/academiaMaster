@@ -21,10 +21,10 @@ public class GrupoMuscular {
 	//private Cliente cliente;
 	
 	@Column(name="MUSCULO")
-	private char musculo;
+	private String musculo;
 	
 	@Column(name="EXERCICIOS")
-	private char exercicios;
+	private String exercicios;
 	
 	
 	/**
@@ -45,28 +45,28 @@ public class GrupoMuscular {
 	 * 
 	 * @return the musculo
 	 */
-	public char getMusculo() {
+	public String getMusculo() {
 		return musculo;
 	}
 	/**
 	 * 
 	 * @param musculo the musculo to set
 	 */
-	public void setMusculo(char musculo) {
+	public void setMusculo(String musculo) {
 		this.musculo = musculo;
 	}
 	/**
 	 * 
 	 * @return the exercicio
 	 */
-	public char getExercicios() {
+	public String getExercicios() {
 		return exercicios;
 	}
 	/**
 	 * 
 	 * @param exercicios the exercicios to set
 	 */
-	public void setExercicios(char exercicios) {
+	public void setExercicios(String exercicios) {
 		this.exercicios = exercicios;
 	}
 	

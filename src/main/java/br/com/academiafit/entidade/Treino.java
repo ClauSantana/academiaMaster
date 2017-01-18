@@ -17,7 +17,7 @@ public class Treino {
 	private long id;
 	
 	@Column(name="diasemana")
-	private char diasemana;
+	private String diasemana;
 	
 	@Column(name="series")
 	private int series;
@@ -33,11 +33,11 @@ public class Treino {
 		this.id = id;
 	}
 
-	public char getDiasemana() {
+	public String getDiasemana() {
 		return diasemana;
 	}
 
-	public void setDiasemana(char diasemana) {
+	public void setDiasemana(String diasemana) {
 		this.diasemana = diasemana;
 	}
 

@@ -3,7 +3,9 @@ package br.com.academiafit.vo.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.academiafit.entidade.GrupoMuscular;
 import br.com.academiafit.entidade.Treino;
+import br.com.academiafit.vo.GrupoMuscularVO;
 import br.com.academiafit.vo.TreinoVO;
 
 public class ConverterTreino {
@@ -37,5 +39,10 @@ public class ConverterTreino {
 			}
 		}
 		return listTreinoVO;
+	}
+
+	public static List<GrupoMuscularVO> ConverterGrupoMuscularListaParaListaVO(List<GrupoMuscular> consultarTodos) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

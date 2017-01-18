@@ -21,30 +21,33 @@ public class TreinoServiceImpl implements TreinoService{
 	@Autowired(required=true)
 	private TreinoDAO dao;
 	
+	@Override
 	@Transactional
 	public void incluir(TreinoVO treino) {
 		String msg = new String (dao.incluir(ConverterTreino.ConverterTreinoVoParaTreino(treino)));
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));	
 	}
 
-	@Transactional
+	@Override
 	public List<TreinoVO> listarTodos() {
 		return ConverterTreino.ConverterTreinoListaTreinoParaListaVo(dao.consultarTodos());
 	}
-
+	
+	@Override
 	@Transactional
 	public void excluir(TreinoVO treino) {
 		String msg = new String (dao.excluir(ConverterTreino.ConverterTreinoVoParaTreino(treino).getId()));
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));
 	}
-
+	
+	@Override
 	@Transactional
 	public void alterar(TreinoVO treino) {
 		String msg = new String (dao.alterar(ConverterTreino.ConverterTreinoVoParaTreino(treino)));
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));
 	}
 
-	@Transactional
+	@Override
 	public void consultar(TreinoVO treino) {
 		try{
 			dao.consultar(ConverterTreino.ConverterTreinoVoParaTreino(treino).getId());

@@ -10,4 +10,5 @@ public interface TreinoService {
 	public void excluir (TreinoVO treino);
 	public void alterar(TreinoVO treino);
 	public List<TreinoVO> listarTodos();
+	void consultar(TreinoVO treino);
 }

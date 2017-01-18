@@ -2,13 +2,13 @@ package br.com.academiafit.vo;
 
 public class ProfessorVO {
 
-	private char horario;
+	private String horario;
 
-	public char getHorario() {
+	public String getHorario() {
 		return horario;
 	}
 
-	public void setHorario(char horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 	

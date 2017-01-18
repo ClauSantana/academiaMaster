@@ -21,6 +21,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Autowired(required=true)
 	private UsuarioDAO dao;
 	
+	@Override
 	@Transactional
 	public void incluir(UsuarioVO usuario) {
 		String msg = new String (dao.incluir(ConverterUsuario.ConverterUsuarioVoParaUsuario(usuario)));
@@ -32,19 +33,21 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return ConverterUsuario.ConverterUsuarioListaUsuarioParaListaVo(dao.consultarTodos());
 	}
 
+	@Override
 	@Transactional
 	public void excluir(UsuarioVO usuario) {
 		String msg = new String (dao.excluir(ConverterUsuario.ConverterUsuarioVoParaUsuario(usuario).getNickname()));
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));
 	}
-
+	
+	@Override
 	@Transactional
 	public void alterarSenha(UsuarioVO usuario) {
 		String msg = new String (dao.alterarSenha(ConverterUsuario.ConverterUsuarioVoParaUsuario(usuario)));
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(msg));
 	}
 
-	@Transactional
+	@Override
 	public void consultar(UsuarioVO usuario) {
 		try{
 			dao.consultar(ConverterUsuario.ConverterUsuarioVoParaUsuario(usuario).getNickname());
