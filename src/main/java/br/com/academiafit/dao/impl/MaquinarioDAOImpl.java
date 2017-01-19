@@ -6,10 +6,13 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.academiafit.dao.MaquinarioDAO;
 import br.com.academiafit.entidade.Maquinario;
 import br.com.academiafit.entidade.Usuario;
 
+@Repository
 public class MaquinarioDAOImpl extends AbstractDAOImpl implements MaquinarioDAO {
 	
 	@Override

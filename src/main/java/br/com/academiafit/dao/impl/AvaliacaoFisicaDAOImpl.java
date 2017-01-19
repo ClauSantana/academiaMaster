@@ -24,6 +24,7 @@ public class AvaliacaoFisicaDAOImpl extends AbstractDAOImpl implements Avaliacao
 		@Override
 		public void excluir(AvaliacaoFisica avaliacaoFisica){
 			// exclui o avaliacaoFisica correspondente
+		AvaliacaoFisica user = super.getEntityManager().find(AvaliacaoFisica.class, avaliacaoFisica.getId());	
 			super.getEntityManager().remove(avaliacaoFisica);
 
 		}

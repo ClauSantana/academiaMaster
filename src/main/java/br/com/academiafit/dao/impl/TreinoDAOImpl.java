@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.academiafit.dao.TreinoDAO;
 import br.com.academiafit.entidade.Treino;
+import br.com.academiafit.entidade.Usuario;
 import br.com.academiafit.entidade.Treino;
 import br.com.academiafit.exception.BusinessException;
 
@@ -26,6 +27,7 @@ public class TreinoDAOImpl extends AbstractDAOImpl implements TreinoDAO{
 	@Override
 	public void excluir(Treino treino){
 		// exclui o treino correspondente
+		Treino user = super.getEntityManager().find(Treino.class, treino.getId());
 		super.getEntityManager().remove(treino);
 
 		// fecha a conexão

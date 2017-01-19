@@ -24,6 +24,7 @@ public class UsuarioDAOImpl extends AbstractDAOImpl implements UsuarioDAO{
 	@Override
 	public void excluir(Usuario usuario){
 		// exclui o usuario correspondente
+		Usuario user = super.getEntityManager().find(Usuario.class, usuario.getNickname());
 		super.getEntityManager().remove(usuario);
 	}
 

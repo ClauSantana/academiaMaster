@@ -5,11 +5,13 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.academiafit.dao.GrupoMuscularDAO;
 import br.com.academiafit.entidade.GrupoMuscular;
 import br.com.academiafit.entidade.Usuario;
 
-
+@Repository
 public class GrupoMuscularDAOImpl extends AbstractDAOImpl implements GrupoMuscularDAO{
 	
 	@Override

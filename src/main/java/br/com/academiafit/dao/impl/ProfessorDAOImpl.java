@@ -6,11 +6,15 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.academiafit.dao.ProfessorDAO;
 import br.com.academiafit.entidade.Cliente;
+import br.com.academiafit.entidade.Pessoa;
 import br.com.academiafit.entidade.Professor;
 import br.com.academiafit.entidade.Usuario;
 
+@Repository
 public class ProfessorDAOImpl extends AbstractDAOImpl implements ProfessorDAO{
 
 	@Override
@@ -36,6 +40,7 @@ public class ProfessorDAOImpl extends AbstractDAOImpl implements ProfessorDAO{
 
 	@Override
 	public String excluir(int index) {
+		Professor user = super.getEntityManager().find(Professor.class, index);
 		Professor professor = super.getEntityManager().find(Professor.class,index);
 
 		super.getEntityManager().remove(professor);

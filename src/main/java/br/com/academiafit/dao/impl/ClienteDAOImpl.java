@@ -6,10 +6,13 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.academiafit.dao.ClienteDAO;
 import br.com.academiafit.entidade.Cliente;
 import br.com.academiafit.entidade.Usuario;
 
+@Repository
 public class ClienteDAOImpl extends AbstractDAOImpl implements ClienteDAO{
 
 	@Override
@@ -51,7 +54,7 @@ public class ClienteDAOImpl extends AbstractDAOImpl implements ClienteDAO{
 
 	@Override
 	public String excluir(Cliente cliente) {
-		
+		Cliente user = super.getEntityManager().find(Cliente.class, cliente.getId());
 		super.getEntityManager().remove(cliente);
 		
 		return null;
